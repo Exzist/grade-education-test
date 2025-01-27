@@ -1,9 +1,11 @@
+.stars {
+}
+
 .star {
+  position: relative;
   display: inline-block;
-  width: 30px;
-  height: 30px;
-  background-color: #fff;
-  box-shadow: 0px 0px 5px #fcc141;
+  width: 40px;
+  height: 40px;
   clip-path: polygon(
     50% 0%,
     61% 35%,
@@ -16,5 +18,28 @@
     2% 35%,
     39% 35%
   );
-  position: relative;
+  background-color: #ffc107;
+}
+
+.star__polygon {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  background-color: #fff;
+  background: linear-gradient(to right, #ffc107 0%, #fff 0%);
 }

@@ -1,6 +1,15 @@
 <template>
   <div class="stars">
-    <div v-for="i in 5" :key="i" class="star"></div>
+    <div v-for="i in 5" :key="i" class="star">
+      <span
+        class="star__polygon"
+        :style="{
+          background: `linear-gradient(to right, #ffc107 ${calculateStarFill(
+            i
+          )}%, #fff 0%)`,
+        }"
+      ></span>
+    </div>
   </div>
 </template>
 
@@ -22,16 +31,4 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-/* .star.full {
-  background-color: gold;
-}
-
-.star.half {
-  background: linear-gradient(to right, gold 50%, #dcdcdc 50%);
-}
-
-.star.empty {
-  background-color: #dcdcdc;
-} */
-</style>
+<style scoped></style>
