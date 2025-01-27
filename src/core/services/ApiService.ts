@@ -1,5 +1,4 @@
 import type { App } from "vue";
-import type { AxiosResponse } from "axios";
 import axios from "axios";
 import VueAxios from "vue-axios";
 
@@ -19,7 +18,10 @@ class ApiService {
   public static init(app: App<Element>) {
     ApiService.vueInstance = app;
     ApiService.vueInstance.use(VueAxios, axios);
-    ApiService.vueInstance.axios.defaults.baseURL = process.env.VUE_APP_API_URL;
+    ApiService.vueInstance.axios.defaults.baseURL =
+      import.meta.env.VITE_API_URL;
+    ApiService.vueInstance.axios.defaults.headers.common["X-API-Key"] =
+      import.meta.env.VITE_API_KEY;
   }
 
   /**
@@ -28,7 +30,7 @@ class ApiService {
    * @param params
    * @returns Promise<AxiosResponse>
    */
-  public static query(resource: string, params: any): Promise<AxiosResponse> {
+  public static query<T>(resource: string, params: any): Promise<T> {
     return ApiService.vueInstance.axios.get(resource, params);
   }
 }
