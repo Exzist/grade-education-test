@@ -1,0 +1,176 @@
+.review-card {
+  &__wrapper {
+    max-width: 1458px;
+    margin: 0 auto;
+    padding: 30px;
+
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &__content-header {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+  }
+
+  &__content-title {
+    font-size: $default;
+    line-height: 1.625rem;
+  }
+
+  &__content-review {
+    display: flex;
+    row-gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 20px;
+  }
+
+  &__content-rate {
+    font-family: $greenwich;
+    font-size: $big;
+  }
+
+  &__content-reviews-number {
+    color: $gray;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  &__button {
+    position: relative;
+    padding: 11px 20px;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: all 0.3s ease-in;
+    line-height: normal;
+
+    &_primary {
+      text-align: center;
+      padding: 10px 19px;
+      border-radius: 7.3px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        border-radius: 8.1px;
+        background: $primary-button-gradient;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        right: -1.1px;
+        bottom: -1px;
+        z-index: -2;
+        border-radius: 8px;
+        background: $primary-button-gradient-border;
+        transition: all 0.3s ease-in;
+      }
+
+      &:hover {
+        background: $green-hover;
+        color: $white;
+      }
+
+      &:hover::before {
+        background: $green-hover;
+      }
+    }
+
+    &_secondary {
+      color: $white;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 8px;
+        background: $secondary-button-gradient;
+      }
+
+      &:hover {
+        background-color: $green-hover;
+      }
+    }
+  }
+
+  &__content-reviews-number,
+  &__button {
+    font-size: $small;
+  }
+
+  &__content-title,
+  &__content-rate,
+  &__button {
+    font-weight: 500;
+  }
+
+  &__button,
+  &__content-reviews-number,
+  &__content-title {
+    font-family: $formular;
+  }
+
+  @media (min-width: 577px) {
+    &__wrapper {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__buttons {
+      flex-direction: row;
+      gap: 10px 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    &__content {
+      flex-direction: row;
+      gap: 0px 50px;
+    }
+
+    &__content-title {
+      font-size: $default-desktop;
+    }
+
+    &__content-rate {
+      font-size: $big-desktop;
+    }
+  }
+
+  @media (min-width: 1367px) {
+    &__content {
+      gap: 0px 60px;
+    }
+  }
+}
