@@ -1,11 +1,7 @@
 import ApiService from "@/core/services/ApiService";
 import type { AxiosResponseHeaders } from "axios";
 import type { Module } from "vuex/types/index.js";
-
-interface Review {
-  evaluation: number;
-  reviewsNumber: number;
-}
+import type { Review } from "@/assets/ts/interfaces/Review";
 
 interface ReviewState {
   reviews: Review[];

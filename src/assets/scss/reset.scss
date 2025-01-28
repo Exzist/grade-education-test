@@ -1,4 +1,4 @@
-/* Обнуление всех стилей */
+/* Styles reset */
 
 * {
   padding: 0px;
@@ -63,6 +63,7 @@ button::-moz-focus-inner {
 a,
 a:visited {
   text-decoration: none;
+  color: inherit;
 }
 
 a:hover {

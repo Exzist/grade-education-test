@@ -28,7 +28,7 @@ class ApiService {
    * @description send the HTTP GET request
    * @param resource
    * @param params
-   * @returns Promise<AxiosResponse>
+   * @returns Promise<T>
    */
   public static query<T>(resource: string, params: any): Promise<T> {
     return ApiService.vueInstance.axios.get(resource, params);

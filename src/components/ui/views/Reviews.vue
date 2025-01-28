@@ -3,7 +3,14 @@
     <section class="reviews-list__reviews reviews">
       <div class="reviews__container">
         <div class="reviews__wrapper">
-          <review-card :review="reviews[0]"/>
+          <!-- There is no need to use v-for, no requirement in task to display list of cards -->
+          <review-card :review="reviews[0]"></review-card>
+
+          <!-- This is an example -->
+          <review-card :review="reviews[1]">
+            <template #title>Different title</template>
+            <template #content>Different content</template>
+          </review-card>
         </div>
       </div>
     </section>

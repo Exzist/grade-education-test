@@ -5,21 +5,28 @@
         <div class="review-card__content-header">
           <img src="/media/svg/google.svg" alt="google logo" />
           <h3 class="review-card__content-title">
-            Відгуки наших клієнтів у Google
+            <slot name="title">Відгуки наших клієнтів у Google</slot>
           </h3>
         </div>
         <div class="review-card__content-review">
-          <p class="review-card__content-rate">{{ review?.evaluation }}</p>
-          <rating-stars :rating="review?.evaluation" />
-          <p class="review-card__content-reviews-number">
-            {{ `${review?.reviewsNumber} відгуки` }}
-          </p>
+          <slot name="content">
+            <p class="review-card__content-rate">{{ review?.evaluation }}</p>
+            <rating-stars :rating="review?.evaluation" />
+            <p class="review-card__content-reviews-number">
+              {{ `${review?.reviewsNumber} відгуки` }}
+            </p>
+          </slot>
         </div>
       </div>
       <div class="review-card__buttons">
-        <button class="review-card__button review-card__button_primary">
+        <a
+          href="https://google.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="review-card__button review-card__button_primary"
+        >
           Переглянути
-        </button>
+        </a>
         <button class="review-card__button review-card__button_secondary">
           Написати
         </button>

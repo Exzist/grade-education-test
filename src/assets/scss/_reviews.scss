@@ -9,5 +9,9 @@
 
   &__wrapper {
     padding: 50px 0;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
   }
 }

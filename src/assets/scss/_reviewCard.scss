@@ -10,16 +10,12 @@
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-    // align-items: center;
-    // justify-content: space-between;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-    // align-items: center;
-    // column-gap: 60px;
   }
 
   &__content-header {
@@ -30,6 +26,7 @@
 
   &__content-title {
     font-size: $default;
+    line-height: 1.625rem;
   }
 
   &__content-review {
@@ -41,7 +38,8 @@
   }
 
   &__content-rate {
-    font-size: 36px;
+    font-family: $greenwich;
+    font-size: $big;
   }
 
   &__content-reviews-number {
@@ -52,28 +50,40 @@
     display: flex;
     flex-direction: column;
     row-gap: 10px;
-    // align-items: center;
-    // column-gap: 10px;
   }
 
   &__button {
+    position: relative;
     padding: 11px 20px;
     border-radius: 8px;
+    background-color: transparent;
     transition: all 0.3s ease-in;
 
     &_primary {
-      position: relative;
+      text-align: center;
       padding: 10px 19px;
-      background: $primary-button-gradient;
+      border-radius: 7.3px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        border-radius: 8.1px;
+        background: $primary-button-gradient;
+      }
 
       &::before {
         content: "";
         position: absolute;
         top: -1px;
         left: -1px;
-        right: -1px;
+        right: -1.1px;
         bottom: -1px;
-        z-index: -1;
+        z-index: -2;
         border-radius: 8px;
         background: $primary-button-gradient-border;
         transition: all 0.3s ease-in;
@@ -91,10 +101,21 @@
 
     &_secondary {
       color: $white;
-      background: $secondary-button-gradient;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 8px;
+        background: $secondary-button-gradient;
+      }
 
       &:hover {
-        background: $secondary-button-gradient-hover;
+        background-color: $green-hover;
       }
     }
   }
@@ -110,16 +131,45 @@
     font-weight: 500;
   }
 
-  // @media (max-width: 1367px) {
-  //   &__content {
-  //     column-gap: 50px;
-  //   }
-  // }
+  &__button,
+  &__content-reviews-number,
+  &__content-title {
+    font-family: $formular;
+  }
 
-  // @media (max-width: 1200px) {
-  //   &__content {
-  //     flex-direction: column;
-  //     align-items: baseline;
-  //   }
-  // }
+  @media (min-width: 577px) {
+    &__wrapper {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__buttons {
+      flex-direction: row;
+      gap: 10px 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    &__content {
+      flex-direction: row;
+      gap: 0px 50px;
+    }
+
+    &__content-title {
+      font-size: $default-desktop;
+    }
+
+    &__content-rate {
+      font-size: $big-desktop;
+    }
+  }
+
+  @media (min-width: 1367px) {
+    &__content {
+      gap: 0px 60px;
+    }
+  }
 }
