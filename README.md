@@ -33,9 +33,9 @@ npm run build
 ```
 
 ### Attention!!!!
-```sh
+
 I will add .env file to this repo. I KNOW that this is unsecure, but it`s test task and i will make it to simplify inspection process
-```
+
 
 ### API description
 
