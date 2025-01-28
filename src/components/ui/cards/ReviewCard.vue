@@ -5,7 +5,7 @@
         <div class="review-card__content-header">
           <img src="/media/svg/google.svg" alt="google logo" />
           <h3 class="review-card__content-title">
-            <slot name="title">Відгуки наших клієнтів у Google</slot>
+            <slot name="title">{{ translate("reviewsPage.title") }}</slot>
           </h3>
         </div>
         <div class="review-card__content-review">
@@ -13,7 +13,9 @@
             <p class="review-card__content-rate">{{ review?.evaluation }}</p>
             <rating-stars :rating="review?.evaluation" />
             <p class="review-card__content-reviews-number">
-              {{ `${review?.reviewsNumber} відгуки` }}
+              {{
+                `${review?.reviewsNumber} ${translate("reviewsPage.reviews")}`
+              }}
             </p>
           </slot>
         </div>
@@ -25,10 +27,13 @@
           rel="noopener noreferrer"
           class="review-card__button review-card__button_primary"
         >
-          Переглянути
+          {{ translate("reviewsPage.checkOut") }}
         </a>
-        <button class="review-card__button review-card__button_secondary">
-          Написати
+        <button
+          @click="changeLocale"
+          class="review-card__button review-card__button_secondary"
+        >
+          {{ translate("reviewsPage.write") }}
         </button>
       </div>
     </div>

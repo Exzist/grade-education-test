@@ -8,8 +8,8 @@
 
           <!-- This is an example -->
           <review-card :review="reviews[1]">
-            <template #title>Different title</template>
-            <template #content>Different content</template>
+            <template #title>Different static title</template>
+            <template #content>Different static content</template>
           </review-card>
         </div>
       </div>
